@@ -21,7 +21,7 @@ public class UnitOfMeasureRepositoryIT {
     @Autowired
     UnitOfMeasureRepository unitOfMeasureRepository;
 
-    @Before("findDescription")
+    @BeforeEach
     public void setUp() throws Exception {
     }
 
