@@ -1,7 +1,6 @@
 package guru.springframework.repositories;
 
 import guru.springframework.domain.UnitOfMeasure;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -12,8 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * Created by jt on 6/17/17.
+ */
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
 public class UnitOfMeasureRepositoryIT {
@@ -40,4 +42,5 @@ public class UnitOfMeasureRepositoryIT {
 
         assertEquals("Cup", uomOptional.get().getDescription());
     }
+
 }

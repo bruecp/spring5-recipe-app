@@ -14,13 +14,16 @@ import org.springframework.ui.Model;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
-class IndexControllerTest {
+/**
+ * Created by jt on 6/17/17.
+ */
+public class IndexControllerTest {
 
     @Mock
     RecipeService recipeService;
@@ -31,7 +34,7 @@ class IndexControllerTest {
     IndexController controller;
 
     @BeforeEach
-    void setUp() {
+    public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
 
         controller = new IndexController(recipeService);
@@ -47,7 +50,7 @@ class IndexControllerTest {
     }
 
     @Test
-    void getIndexPage() {
+    public void getIndexPage() throws Exception {
 
         //given
         Set<Recipe> recipes = new HashSet<>();
@@ -73,4 +76,5 @@ class IndexControllerTest {
         Set<Recipe> setInController = argumentCaptor.getValue();
         assertEquals(2, setInController.size());
     }
+
 }
